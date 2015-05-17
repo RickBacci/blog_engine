@@ -4,7 +4,7 @@ require 'time'
 class GithubHook < Sinatra::Base
   def self.parse_git
     # parse hash and date from the git log command
-    sha1, date = `git log HEAD~1..HEAD --pretty=format:%h^%c1`.strip.split('^')
+    sha1, date = `git log HEAD~1..HEAD --pretty=format:%h^%ci`.strip.split('^')
     set :commit_hash, sha1
     set :commit_date, Time.parse(date)
   end

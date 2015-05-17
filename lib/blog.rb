@@ -10,7 +10,7 @@ class Blog < Sinatra::Base
   # It also takes a path as a second argument.
   # The generated path is treated as being relative
   # to that path.
-  set :root, File.expand_path('../../' __FILE__)
+  set :root, File.expand_path('../../',  __FILE__)
   set :articles, []
   set :app_file, __FILE__
 
